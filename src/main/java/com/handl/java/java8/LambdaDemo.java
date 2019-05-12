@@ -3,7 +3,7 @@ package com.handl.java.java8;
 import java.util.ArrayList;
 import java.util.List;
 
-public class lambdaDemo {
+public class LambdaDemo {
     //使用lamdba
 
     //1.定义一个方法接受需要处理的数据和处理的行为（函数式接口）
