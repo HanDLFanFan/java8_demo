@@ -32,8 +32,7 @@ public class LambdaDemo {
         //3.调用filetr方法，传入数据和lambda
         List<Apple> appleList = filter(apples, apple -> apple.getWeight() > 10);
 
-        for (Apple apple : appleList)
-            System.out.println(apple.getWeight());
+        appleList.forEach(apple -> System.out.println(apple.getWeight()));
 
     }
 }

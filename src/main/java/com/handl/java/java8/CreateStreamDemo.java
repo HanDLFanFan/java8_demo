@@ -27,18 +27,28 @@ public class CreateStreamDemo {
         System.out.println(stream2.sum());
 
         //3.由文件生成流:Files.lines方法
-        try(Stream<String> fileStream = Files.lines(
-                Paths.get("./streamfile.txt"),
-                Charset.defaultCharset())){
+//        try(Stream<String> fileStream = Files.lines(
+//                Paths.get("./streamfile"),
+//                Charset.defaultCharset())){
+//
+//            fileStream.flatMap(line -> Arrays.stream(line.split(" ")))
+//                    .distinct()
+//                    .forEach(s -> System.out.println(s));
+//
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
 
-            fileStream.flatMap(line -> Arrays.stream(line.split(" ")))
-                    .distinct()
-                    .forEach(s -> System.out.println(s));
 
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-
+        //4.由函数生成流：创建无限流,需要limit方法截断
+        //迭代器:iterate方法,参数是：初始值，lambda（作用于初始值）
+        Stream.iterate(0,n-> n+2)
+                .limit(5)
+                .forEach(integer -> System.out.println(integer));
+        //生成器:generate方法,参数是lambda
+        Stream.generate(Math::random)
+                .limit(5)
+                .forEach(d -> System.out.println(d));
 
 
     }
