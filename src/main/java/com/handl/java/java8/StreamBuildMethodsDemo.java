@@ -13,7 +13,7 @@ import java.util.stream.Stream;
  * 构建流
  * 介绍如何从值序列、数组、文件来创建流，甚至由生成函数来创建无限流
  */
-public class CreateStreamDemo {
+public class StreamBuildMethodsDemo {
 
     public static void main(String[] args) {
 

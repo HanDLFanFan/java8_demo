@@ -22,17 +22,19 @@ public class LambdaDemo {
     public static void main(String[] args) {
         //2.组装数据
         List<Apple> apples = new ArrayList(){{
-            add(new Apple(15.6));
-            add(new Apple(5.6));
-            add(new Apple(13.6));
-            add(new Apple(51.6));
-            add(new Apple(1.6));
+            add(new Apple(15.6,1));
+            add(new Apple(5.6,2));
+            add(new Apple(13.6,3));
+            add(new Apple(51.6,4));
+            add(new Apple(1.6,5));
+            add(new Apple(13.6,6));
         }};
 
         //3.调用filetr方法，传入数据和lambda
         List<Apple> appleList = filter(apples, apple -> apple.getWeight() > 10);
 
         appleList.forEach(apple -> System.out.println(apple.getWeight()));
+
 
     }
 }
@@ -58,16 +60,30 @@ interface AppleLamdba<T,R>{
  */
 class Apple{
     double weight;
+    Integer id;
 
-    public Apple(double weight) {
+    public Apple(double weight,Integer id) {
         this.weight = weight;
+        this.id = id;
     }
 
     public double getWeight() {
         return weight;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Apple{" +
+                "weight=" + weight +
+                ", id=" + id +
+                '}';
     }
 }

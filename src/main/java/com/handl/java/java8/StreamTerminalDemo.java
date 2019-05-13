@@ -27,7 +27,8 @@ public class StreamTerminalDemo {
          */
 
         /**
-         * 终端操作：collect收集方法,把结果放到list或者set等等
+         * 终端操作：collect收集方法,方法的参数是 Collector 接口的一个实现，如toList()
+         * 把结果放到list或者set等等
          */
         //collect，收集流中间操作的结果,例如：收集评分大于40000的数据
         List<MhxySy> collectList = list.stream().filter(mhxySy -> mhxySy.getScore() > 40000)
